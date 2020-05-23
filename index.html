@@ -33,6 +33,42 @@
 
   <!-- Custom styles for this template -->
   <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    /* 40px */
+    .toTop-arrow {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      border-radius: 33%;
+      opacity: 0.6;
+      background: #000;
+      cursor: pointer;
+      position:fixed;
+      right: 1rem;
+      bottom: 1rem;
+      display: none;
+    }
+    .toTop-arrow::before, .toTop-arrow::after {
+      width: 18px;
+      height: 5px;
+      border-radius: 3px;
+      background: #f90;
+      position: absolute;
+      content: "";
+    }
+    .toTop-arrow::before {
+      transform: rotate(-45deg) translate(0, -50%);
+      left: 0.5rem;
+    }
+    .toTop-arrow::after {
+      transform: rotate(45deg) translate(0, -50%);
+      right: 0.5rem;
+    }
+    .toTop-arrow:focus {outline: none;}
+  </style>
 </head>
 
 <body>
@@ -50,13 +86,12 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
+          <h1 class="masthead-heading mb-0">順興工程行</h1>
+          <h2 class="masthead-subheading mb-0">雲林斗六挖土機出租</h2>
+      </br>
         <img src="img/main.jpg" class="img-fluid" alt="Responsive image">
-        <h1 class="masthead-heading mb-0">雲林斗六挖土機出租</h1>
-        <h2 class="masthead-subheading mb-0">順興工程行</h2>
         <a href="mailto:kyorongyuko@gmail.com" class="btn btn-primary btn-xl rounded-pill mt-5">信箱諮詢</a>
-        <a href="tel:+886988699678" class="btn btn-primary btn-xl rounded-pill mt-5">電話聯繫</a>
         <a href="https://www.facebook.com/pages/category/Science--Technology---Engineering/%E9%9B%B2%E6%9E%97%E6%96%97%E5%85%AD%E6%8C%96%E5%9C%9F%E6%A9%9F%E5%87%BA%E7%A7%9F-%E9%A0%86%E8%88%88%E5%B7%A5%E7%A8%8B%E8%A1%8C-277730902838767/" class="btn btn-primary btn-xl rounded-pill mt-5">FB專頁</a>
-        <a href="https://www.518.com.tw/company-zJ0RzP.html" class="btn btn-primary btn-xl rounded-pill mt-5">找職缺</a>
       </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
@@ -64,6 +99,8 @@
     <div class="bg-circle-3 bg-circle"></div>
     <div class="bg-circle-4 bg-circle"></div>
   </header>
+
+  <button type="button" id="BackTop" class="toTop-arrow"></button>
 
     <section>
         <div class="container">
@@ -154,7 +191,16 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-
+      $('#BackTop').click(function(){ 
+		  $('html,body').animate({scrollTop:0}, 333);
+        });
+        $(window).scroll(function() {
+          if ( $(this).scrollTop() > 300 ){
+            $('#BackTop').fadeIn(222);
+          } else {
+            $('#BackTop').stop().fadeOut(222);
+          }
+        }).scroll();
     });
   </script>
 
