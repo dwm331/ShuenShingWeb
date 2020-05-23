@@ -154,21 +154,7 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $.ajax({
-              url: "",   //存取Json的網址  
-              type: "POST",
-              cache:false,
-              dataType: 'json',
-              data:{lang:"zh"},
-              //contentType: "application/json",
-              success: function (data) {
-                console.log(data)
-              },
 
-              error: function (xhr, ajaxOptions, thrownError) {
-                console.log(thrownError)
-              }
-          });
     });
   </script>
 
